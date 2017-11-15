@@ -136,6 +136,7 @@ export class AgWordCloudDirective implements OnInit {
             .attr('text-anchor', 'middle')
             .attr('transform', d => 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')')
             .attr('class', 'word-cloud')
+            .attr("xlink:href", "http://en.wikipedia.org/wiki/"+d.text) //changed
             .on('mouseover', (d, i) => {
                 return this.options.labels ? tooltip.style('visibility', 'visible').text('Size: ' + self.getWordSize(d.text)) : tooltip.style('display', 'none');
             })
